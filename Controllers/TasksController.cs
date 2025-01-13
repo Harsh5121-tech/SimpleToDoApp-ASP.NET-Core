@@ -16,7 +16,7 @@ namespace ToDoApp.Controllers
             return View(tasks);
         }
 
-        [HttpPost]
+        
         public IActionResult Add(string description)
         {
             if (!string.IsNullOrEmpty(description))
@@ -32,7 +32,7 @@ namespace ToDoApp.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
+        
         public IActionResult MarkComplete(int id)
         {
             var task = tasks.FirstOrDefault(t => t.Id == id);
@@ -43,7 +43,7 @@ namespace ToDoApp.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
+        
         public IActionResult Delete(int id)
         {
             var task = tasks.FirstOrDefault(t => t.Id == id);
